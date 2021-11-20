@@ -26,25 +26,18 @@ export default {
         return {
             error: [],
             usuario : null,
-            password: null
+            password: null,
         }
     },
     methods:{
         login:function (e){
-
-            if (this.usuario && this.password){
-                alert('deu certo')
-                // return true;
-            }
-
-            this.error = [];
-
-            if (!this.usuario) {
-                this.error.push('nome obrigatório')
-            } if (!this.password) {
-                this.error.push('senha obrigatória')
-            }
             e.preventDefault();
+            axios.post('https://searchpet.dev/api/login',{
+                usuario: this.usuario,
+                password: this.password
+            })
+            .then(response=>(console.log(response)))
+
         }
     }
 }

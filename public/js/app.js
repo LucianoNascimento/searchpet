@@ -1939,21 +1939,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login(e) {
-      if (this.usuario && this.password) {
-        alert('deu certo'); // return true;
-      }
-
-      this.error = [];
-
-      if (!this.usuario) {
-        this.error.push('nome obrigatório');
-      }
-
-      if (!this.password) {
-        this.error.push('senha obrigatória');
-      }
-
       e.preventDefault();
+      axios.post('https://searchpet.dev/api/login', {
+        usuario: this.usuario,
+        password: this.password
+      }).then(function (response) {
+        return console.log(response);
+      });
     }
   }
 });
@@ -2043,8 +2035,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Navbar.vue"
+  data: function data() {
+    return {
+      nome: "Sistema para a adoção<br/> de animais com suporte<br/> de geoprocessamento"
+    };
+  }
 });
 
 /***/ }),
@@ -6503,7 +6529,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".hero[data-v-6dde423b]{\n  background-image: url(\"/image/inicio.jpg\");\n}\n", ""]);
+exports.push([module.i, ".caixa-titulo[data-v-6dde423b]{\n  max-width: 500px;\n}\n.altura[data-v-6dde423b]{\n  height: 272px;\n  background-position: 50% 50%;\n}\n@media (min-width: 769px) {\n.altura[data-v-6dde423b]{\n    height: 650px;\n    background-position: 50% 85%;\n}\n}\n", ""]);
 
 // exports
 
@@ -38512,18 +38538,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "hero bg-auto bg-cover" }, [
+  return _c(
+    "div",
+    {
+      staticClass:
+        "bg-gray-700 bg-hero bg-blend-overlay bg-cover bg-top h-screen bg-no-repeat altura"
+    },
+    [
       _c(
         "nav",
         {
           staticClass:
-            "flex items-center justify-between flex-wrap bg-gray-500 p-6 sm:bg-transparent"
+            "flex items-center justify-between flex-wrap p-6 bg-gray-500 bg-blend-overlay bg-opacity-25"
         },
         [
           _c(
             "div",
-            { staticClass: "flex items-center flex-shrink-0 text-black mr-6" },
+            { staticClass: "flex items-center flex-shrink-0 text-white mr-6" },
             [
               _c(
                 "svg",
@@ -38549,7 +38580,7 @@ var render = function() {
               _c(
                 "span",
                 { staticClass: "font-semibold text-xl tracking-tight" },
-                [_vm._v("Tailwind CSS")]
+                [_vm._v("Menu")]
               )
             ]
           ),
@@ -38559,7 +38590,7 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  "flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-white"
+                  "flex items-center px-3 py-2 border rounded text-white border-teal-400 hover:text-black hover:border-white"
               },
               [
                 _c(
@@ -38586,9 +38617,30 @@ var render = function() {
           _vm._v(" "),
           _vm._m(0)
         ]
-      )
-    ])
-  ])
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "caixa-titulo border-t-4 border-r-4 border-b-4 border-yellow-600 pt-8 pb-8 mt-16 ml-4 md:ml-16 md:mt-32 md:ml-32"
+        },
+        [
+          _c(
+            "h1",
+            {
+              staticClass:
+                "pl-2 text-black md:text-white text-2xl uppercase md:text-4xl md:-ml-16",
+              domProps: { innerHTML: _vm._s(_vm.nome) }
+            },
+            [_vm._v(_vm._s(_vm.nome))]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(1)
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -38607,44 +38659,40 @@ var staticRenderFns = [
             "a",
             {
               staticClass:
-                "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4",
+                "block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4",
               attrs: { href: "#responsive-header" }
             },
-            [_vm._v("\n                        Início\n                    ")]
+            [_vm._v("\n                    Início\n                ")]
           ),
           _vm._v(" "),
           _c(
             "a",
             {
               staticClass:
-                "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4",
+                "block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4",
               attrs: { href: "#responsive-header" }
             },
-            [_vm._v("\n                        Mapa\n                    ")]
+            [_vm._v("\n                    Mapa\n                ")]
           ),
           _vm._v(" "),
           _c(
             "a",
             {
               staticClass:
-                "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white",
+                "block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4",
               attrs: { href: "#responsive-header" }
             },
-            [_vm._v("\n                        Animais\n                    ")]
+            [_vm._v("\n                    Animais\n                ")]
           ),
           _vm._v(" "),
           _c(
             "a",
             {
               staticClass:
-                "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white",
+                "block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-400 mr-4",
               attrs: { href: "#responsive-header" }
             },
-            [
-              _vm._v(
-                "\n                        Recomendações\n                    "
-              )
-            ]
+            [_vm._v("\n                    Recomendações\n                ")]
           )
         ]),
         _vm._v(" "),
@@ -38653,7 +38701,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass:
-                "inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0",
+                "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:bg-gray-400 mt-4 lg:mt-0",
               attrs: { href: "#" }
             },
             [_vm._v("Entrar")]
@@ -38661,6 +38709,122 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "md:flex md:flex-row md:mt-64" }, [
+      _c(
+        "div",
+        { staticClass: "w-full md:w-1/3 p-16 flex flex-col items-center" },
+        [
+          _c("div", [
+            _c("img", { attrs: { src: "http://placekitten.com/200/300" } })
+          ]),
+          _vm._v(" "),
+          _c(
+            "h2",
+            {
+              staticClass: "text-2xl text-center uppercase text-yellow-600 py-4"
+            },
+            [_vm._v("Animais Achados e Perdidos")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-center" }, [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda beatae cumque fugiat minima praesentium quia! Culpa dolores laboriosam obcaecati perferendis? Blanditiis officiis repudiandae veritatis? Ad dolor laudantium minima soluta.100"
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "rounded-3xl bg-yellow-600 uppercase py-2 px-4 text-white text-center mt-4"
+              },
+              [_vm._v("acesse animais achados")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "rounded-3xl bg-yellow-600 uppercase py-2 px-4 text-white text-center mt-4"
+              },
+              [_vm._v("acesse animais perdidos")]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "w-full md:w-1/3 p-16 flex flex-col items-center" },
+        [
+          _c("div", [
+            _c("img", { attrs: { src: "http://placekitten.com/200/300" } })
+          ]),
+          _vm._v(" "),
+          _c(
+            "h2",
+            {
+              staticClass: "text-2xl text-center uppercase text-yellow-600 py-4"
+            },
+            [_vm._v("Mapa para a adoção")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-center" }, [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda beatae cumque fugiat minima praesentium quia! Culpa dolores laboriosam obcaecati perferendis? Blanditiis officiis repudiandae veritatis? Ad dolor laudantium minima soluta.100"
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "rounded-3xl bg-yellow-600 uppercase py-2 px-8 text-white text-center mt-4"
+            },
+            [_vm._v("acesse")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "w-full md:w-1/3 p-16 flex flex-col items-center" },
+        [
+          _c("div", [
+            _c("img", { attrs: { src: "http://placekitten.com/200/300" } })
+          ]),
+          _vm._v(" "),
+          _c(
+            "h2",
+            {
+              staticClass: "text-2xl text-center uppercase text-yellow-600 py-4"
+            },
+            [_vm._v("feira para a adoção")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-center" }, [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda beatae cumque fugiat minima praesentium quia! Culpa dolores laboriosam obcaecati perferendis? Blanditiis officiis repudiandae veritatis? Ad dolor laudantium minima soluta.100"
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "rounded-3xl bg-yellow-600 uppercase py-2 px-8 text-white text-center mt-4"
+            },
+            [_vm._v("acesse")]
+          )
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
