@@ -14,8 +14,17 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $user = $request->only(['usuario','password']);
-            return view('welcome');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            Log::error("O usuario foi logado com sucesso");
+            return response()->json(['data'=>"usuario logado com sucesso"],200);
+        }
+        else{
+            Log::error("O usuario não conseguiu logar");
+            return response()->json(['data'=>'algo não está dando errado'],500);
+
+        }
 
     }
 
