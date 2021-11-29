@@ -12,8 +12,14 @@
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/index','UserController@index');
+
+Route::get('/login', function () {
     return view('login');
 });
-Route::get('/inicio', function () {
-    return view('welcome');
+Route::get('/logado', function () {
+    return view('logado');
 });

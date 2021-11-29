@@ -3,8 +3,8 @@
         <form class="w-full" @submit="login" action="" method="post" novalidate="true">
             <div>
                 <label>Usuário</label>
-                <input type="text" id="usuario" class="w-full mb-2" v-model="usuario">
-                <span>{{usuario}}</span>
+                <input type="text" id="usuario" class="w-full mb-2" v-model="email">
+                <span>{{email}}</span>
             </div>
             <div>
                 <label>Senha</label>
@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             error: [],
-            usuario : null,
+            email : null,
             password: null,
         }
     },
@@ -33,10 +33,17 @@ export default {
         login:function (e){
             e.preventDefault();
             axios.post('https://searchpet.dev/api/login',{
-                usuario: this.usuario,
+                email: this.email,
                 password: this.password
             })
-            .then(response=>(console.log(response)))
+            .then(function (response){
+                if (response.status == 200){
+                    window.location.href = 'https://searchpet.dev/logado';
+                }
+            }).catch(function (error) {
+                alert('deu errado');
+            });
+
 
         }
     }
