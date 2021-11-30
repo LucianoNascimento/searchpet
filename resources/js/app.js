@@ -20,7 +20,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('login', require('./components/Login.vue').default);
+Vue.component('cadastro', require('./components/Cadastro.vue').default);
 Vue.component('formulario', require('./components/Formulario.vue').default);
+Vue.component('formulario-cadastro', require('./components/FormularioCadastro.vue').default);
 Vue.component('navbar', require('./components/Navbar.vue').default);
 
 /**

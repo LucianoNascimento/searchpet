@@ -20,6 +20,9 @@ Route::get('/index','UserController@index');
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/cadastro', function () {
+    return view('registro');
+});
 Route::get('/logado', function () {
     return view('logado');
 });

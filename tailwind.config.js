@@ -8,6 +8,7 @@ module.exports = {
         extend: {
             backgroundImage: {
                 'hero': "url('/image/inicio.jpg')",
+                'login': "url('/image/login_image.jpg')",
             },
         },
         variants: {

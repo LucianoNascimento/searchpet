@@ -1,4 +1,4 @@
-/*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -17767,6 +17767,10 @@ video {
 
 .bg-hero {
   background-image: url('/image/inicio.jpg');
+}
+
+.bg-login {
+  background-image: url('/image/login_image.jpg');
 }
 
 .from-transparent {
@@ -49345,6 +49349,10 @@ video {
     background-image: url('/image/inicio.jpg');
   }
 
+  .sm\:bg-login {
+    background-image: url('/image/login_image.jpg');
+  }
+
   .sm\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -80567,6 +80575,10 @@ video {
 
   .md\:bg-hero {
     background-image: url('/image/inicio.jpg');
+  }
+
+  .md\:bg-login {
+    background-image: url('/image/login_image.jpg');
   }
 
   .md\:from-transparent {
@@ -111793,6 +111805,10 @@ video {
     background-image: url('/image/inicio.jpg');
   }
 
+  .lg\:bg-login {
+    background-image: url('/image/login_image.jpg');
+  }
+
   .lg\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -143017,6 +143033,10 @@ video {
     background-image: url('/image/inicio.jpg');
   }
 
+  .xl\:bg-login {
+    background-image: url('/image/login_image.jpg');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -174239,6 +174259,10 @@ video {
 
   .\32xl\:bg-hero {
     background-image: url('/image/inicio.jpg');
+  }
+
+  .\32xl\:bg-login {
+    background-image: url('/image/login_image.jpg');
   }
 
   .\32xl\:from-transparent {
