@@ -11,7 +11,8 @@
                 <input class="w-full mb-2" type="password" id="senha" v-model="password">
                 <span>{{password}}</span>
             </div>
-            <div>
+            <a href="/cadastro">Fazer o Cadastro</a>
+            <div class="flex justify-end">
                 <button class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" type="submit">Enviar</button>
             </div>
         </form>
@@ -36,11 +37,11 @@ export default {
                 email: this.email,
                 password: this.password
             })
-            .then(function (response){
-                if (response.status == 200){
-                    window.location.href = 'https://searchpet.dev/logado';
-                }
-            }).catch(function (error) {
+                .then(function (response){
+                    if (response.status == 200){
+                        window.location.href = 'https://searchpet.dev/logado';
+                    }
+                }).catch(function (error) {
                 alert('deu errado');
             });
 

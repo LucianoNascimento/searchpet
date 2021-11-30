@@ -1,11 +1,8 @@
 <template>
-    <div class="max-w-screen-xl m-auto">
-        <div class="flex justify-center text-5xl font-sans">{{mensagem}}</div>
-        <div class="sm:flex justify-between flex-wrap items-center">
-            <div class="sm:w-1/2">
-                <img :src="imagem" alt="imagem" class="w-full"/>
-            </div>
-            <div class="sm:w-1/2 quadrado bg-gray-300 rounded-2xl p-4 h-72">
+    <div class="md:w-3/5 bg-login bg-center bg-blend-exclusion bg-no-repeat bg-cover md:m-auto">
+        <div class="flex justify-center text-5xl font-sans pt-4">{{mensagem}}</div>
+        <div class="flex justify-center items-center h-screen rounded-2xl">
+            <div class="md:w-2/5 quadrado bg-gray-300 rounded-2xl p-4 py-8 md:-mt-32">
                 <formulario/>
             </div>
         </div>
@@ -17,11 +14,16 @@ export default {
     data(){
         return {
             mensagem: 'Search Pet',
-            imagem: '/image/login_image.jpg',
         }
     },
     mounted() {
         console.log('Component mounted.')
     }
 }
+
 </script>
+<style scoped>
+.bg-login{
+    background-color: #463c3c;
+}
+</style>

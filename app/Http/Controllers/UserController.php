@@ -5,6 +5,7 @@ use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
@@ -33,20 +34,23 @@ class UserController extends Controller
         $user = User::all();
         return response(UserResource::collection($user),'200');
     }
-
+    public function create()
+    {
+        return view('registro');
+    }
     public function store(Request $request)
     {
         try {
             $user = new User;
-            $user->name = $request->name;
+            $user->name = $request->nome;
             $user->email = $request->email;
-            $user->password = $request->password;
+            $user->password = Hash::make($request->password);
             $user->save();
             Log::channel('usuarios')->info("Usuario $user->name, foi salvo no sistema");
             return response()->json(['success'=>'Salvo com Sucesso'],'201');
         }catch (Throwable $e){
             Log::channel('usuarios')->error("Usuario $user->name, não conseguiu salvar no sistema");
-            return response()->json(["Deu erro em alguma coisa"],'500');
+            return response()->json(['error'=>'Deu erro em alguma coisa'],'500');
         }
 
     }
