@@ -2024,11 +2024,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FormularioCadastro.vue",
   data: function data() {
     return {
-      errors: null,
+      errors: [],
       nome: null,
       email: null,
       password: null
@@ -2036,14 +2038,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login(e) {
-      // this.errors = []
-      if (!this.nome) {
-        this.errors.push('O nome não pode ser vazio');
-      }
-
-      if (!this.email) {
-        this.errors.push('O Email não pode ser vazio');
-      }
+      var _this = this;
 
       e.preventDefault();
       axios.post('api/cadastro', {
@@ -2053,10 +2048,10 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         if (response.status == 201) {
           alert('usuario cadastrado com sucesso');
-          window.location.href = '/login';
+          location.href = '/login';
         }
       })["catch"](function (error) {
-        alert('deu errado');
+        _this.errors = [error.response.data];
       });
     }
   }
@@ -38730,6 +38725,12 @@ var render = function() {
           }
         }),
         _vm._v(" "),
+        _vm._l(_vm.errors, function(error) {
+          return _c("div", { key: _vm.errors.nome }, [
+            _vm._v("\n            " + _vm._s(error.nome) + "\n        ")
+          ])
+        }),
+        _vm._v(" "),
         _c("div", [
           _c("label", [_vm._v("Email")]),
           _vm._v(" "),
@@ -38783,7 +38784,8 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm._m(0)
-      ]
+      ],
+      2
     )
   ])
 }

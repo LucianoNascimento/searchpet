@@ -3,7 +3,9 @@
         <form class="w-full" @submit="login" action="" method="post" novalidate="true">
             <label>Usuário</label>
             <input type="text" id="nome" class="w-full mb-2" v-model="nome">
-<!--            {{errors}}-->
+            <div v-for="error in errors" :key="errors.nome">
+                {{error.nome}}
+            </div>
             <div>
                 <label>Email</label>
                 <input type="text" id="email" class="w-full mb-2" v-model="email">
@@ -25,34 +27,26 @@ export default {
 
     data() {
         return {
-            errors : null,
+            errors : [],
             nome : null,
             email : null,
             password: null,
         }
     },
     methods:{
-        login:function (e){
-            // this.errors = []
-            if(!this.nome) {
-                this.errors.push('O nome não pode ser vazio')
-            }
-            if(!this.email) {
-                this.errors.push('O Email não pode ser vazio')
-            }
-
+        login(e){
             e.preventDefault();
             axios.post('api/cadastro',{
                 nome: this.nome,
                 email: this.email,
                 password: this.password,
-            }).then(function (response){
+            }).then(function(response) {
                 if (response.status == 201){
                     alert('usuario cadastrado com sucesso')
-                    window.location.href = '/login';
+                    location.href = '/login';
                 }
-            }).catch(function (error) {
-                alert('deu errado');
+            }).catch((error)=> {
+                this.errors = [error.response.data]
             });
 
         }

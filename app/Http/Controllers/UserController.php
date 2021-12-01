@@ -24,7 +24,6 @@ class UserController extends Controller
         else{
             Log::error("O usuario não conseguiu logar");
             return response()->json(['data'=>'algo não está dando errado'],500);
-
         }
 
     }
@@ -38,8 +37,16 @@ class UserController extends Controller
     {
         return view('registro');
     }
+
     public function store(Request $request)
     {
+        if (empty($request->nome)) {
+            return response()->json(['nome' => 'nome obrigatório'],422);
+        }
+        if (empty($request->email)) {
+            return response()->json(['nome' => 'email obrigatório'],422);
+        }
+
         try {
             $user = new User;
             $user->name = $request->nome;
