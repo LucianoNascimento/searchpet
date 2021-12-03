@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+
 use Tests\TestCase;
 
 class LoginTest extends TestCase
@@ -15,9 +16,7 @@ class LoginTest extends TestCase
      */
     public function testExample()
     {
-        $response = $this->get('/login');
+        $response = $this->postJson('/login', ['email' => 'lucianosantosti@hotmail.com','password'=>123456]);
         $response->assertStatus(200);
-        $response->assertSee('SearchPet');
-
     }
 }
