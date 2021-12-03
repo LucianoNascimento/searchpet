@@ -3,12 +3,12 @@
         <form class="w-full" @submit="login" action="" method="post" novalidate="true">
             <div>
                 <label>Usuário</label>
-                <input type="text" id="usuario" class="w-full mb-2" v-model="email">
+                <input type="text" id="usuario" name="email" class="w-full mb-2" v-model="email">
                 <span>{{email}}</span>
             </div>
             <div>
                 <label>Senha</label>
-                <input class="w-full mb-2" type="password" id="senha" v-model="password">
+                <input class="w-full mb-2" type="password" name="password" id="senha" v-model="password">
                 <span>{{password}}</span>
             </div>
             <a href="/cadastro">Fazer o Cadastro</a>
