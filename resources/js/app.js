@@ -7,7 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+import * as VueGoogleMaps from 'vue2-google-maps'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -24,13 +24,20 @@ Vue.component('cadastro', require('./components/Cadastro.vue').default);
 Vue.component('formulario', require('./components/Formulario.vue').default);
 Vue.component('formulario-cadastro', require('./components/FormularioCadastro.vue').default);
 Vue.component('navbar', require('./components/Navbar.vue').default);
+Vue.component('navbar', require('./components/Navbar.vue').default);
+Vue.component('mapa', require('./components/Mapa.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyD5BVi_IUo3zCzWefEWfW9sP1r-5ZbeWr4',
+        libraries: 'places',
+    },
+})
 const app = new Vue({
     el: '#app',
 

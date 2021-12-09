@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('/login','UserController@login');
 Route::get('/users', 'UserController@index');
+Route::get('/endereco', 'EnderecoController@index');
 Route::post('/cadastro', 'UserController@store');
 

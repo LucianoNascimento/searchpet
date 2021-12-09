@@ -14,7 +14,8 @@ class EnderecoController extends Controller
      */
     public function index()
     {
-        //
+        $endereco = Endereco::all();
+        return response()->json($endereco);
     }
 
     /**
