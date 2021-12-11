@@ -6,7 +6,7 @@
                 <img :src="imagem" alt="imagem" class="w-full"/>
             </div>
             <div class="sm:w-1/2 quadrado bg-gray-300 rounded-2xl p-4 h-72">
-                <formulario-endereco/>
+                <formulario-cadastro/>
             </div>
         </div>
     </div>

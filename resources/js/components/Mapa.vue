@@ -5,7 +5,7 @@
             <gmap-info-window :position="position" class="gm-ui-hover-effect"
             >
 
-             <span>fasdfsafdsfafd</span>
+                <span>fasdfsafdsfafd</span>
                 <img src="https://placekitten.com/100/150">
             </gmap-info-window>
         </gmap-map>

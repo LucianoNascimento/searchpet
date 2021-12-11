@@ -57,7 +57,7 @@
                 <div><img src="http://placekitten.com/200/300"></div>
                 <h2 class="text-2xl text-center uppercase text-yellow-600 py-4">feira para a adoção</h2>
                 <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda beatae cumque fugiat minima praesentium quia! Culpa dolores laboriosam obcaecati perferendis? Blanditiis officiis repudiandae veritatis? Ad dolor laudantium minima soluta.100</p>
-                <button class="rounded-3xl bg-yellow-600 uppercase py-2 px-8 text-white text-center mt-4">acesse</button>
+                <a href="/cadastro" class="rounded-3xl bg-yellow-600 uppercase py-2 px-8 text-white text-center mt-4">acesse</a>
             </div>
 
         </div>

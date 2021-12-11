@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Endereco;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class EnderecoController extends Controller
@@ -18,11 +19,26 @@ class EnderecoController extends Controller
         return response()->json($endereco);
     }
 
+    public function coordenadas(Request $request)
+    {
+
+        $cep = $request->input('cep');
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "viacep.com.br/ws/$cep/json/");
+        curl_setopt($ch, CURLOPT_POST, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec ($ch);
+        curl_close ($ch);
+        return response()->json($response);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
