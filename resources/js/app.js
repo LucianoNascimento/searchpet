@@ -22,7 +22,9 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.component('login', require('./components/Login.vue').default);
 Vue.component('cadastro', require('./components/Cadastro.vue').default);
+Vue.component('cadastro-animais', require('./components/CadastroAnimais.vue').default);
 Vue.component('formulario-cadastro', require('./components/FormularioCadastro.vue').default);
+Vue.component('cadastro-animais', require('./components/CadastroAnimais.vue').default);
 Vue.component('formulario-endereco', require('./components/FormularioEndereco.vue').default);
 Vue.component('navbar', require('./components/Navbar.vue').default);
 Vue.component('navbar', require('./components/Navbar.vue').default);

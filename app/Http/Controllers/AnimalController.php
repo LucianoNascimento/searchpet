@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Animal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Throwable;
+use Illuminate\Support\Facades\Storage;
 
 class AnimalController extends Controller
 {
@@ -35,7 +38,27 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nome = $request->file('imagem_animal')->getClientOriginalName();
+        $extensao = $request->file('imagem_animal')->getClientOriginalExtension();
+
+        try {
+            $animal = new Animal();
+            $animal->usuario_id = 1;
+            $animal->nome_animal = $request->input('nome_animal');
+            $animal->sexo_animal = $request->sexo_animal;
+            $animal->cor_do_animal = $request->input('cor_do_animal');
+            $animal->raca_animal = $request->input('raca_animal');
+            $animal->porte_animal = $request->input('porte_animal');
+            $animal->imagem_animal = $nome;
+            $request->file('imagem_animal')->storeAs('animais',$nome);
+            $animal->save();
+            Log::info("Animal $animal->nome_animal foi cadastrado por com sucesso");
+            return response()->json('Cadastro realizado com sucesso',200);
+        } catch (Throwable $e) {
+
+            $e->getMessage();
+        }
+
     }
 
     /**

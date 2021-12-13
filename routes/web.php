@@ -30,3 +30,6 @@ Route::get('/cadastro', function () {
 Route::get('/logado', function () {
     return view('logado');
 });
+Route::get('/cadastro-animais', function () {
+    return view('cadastroAnimais');
+});

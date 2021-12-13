@@ -23,4 +23,5 @@ Route::get('/users', 'UserController@index');
 Route::get('/endereco', 'EnderecoController@index');
 Route::post('/coordenadas', 'EnderecoController@coordenadas');
 Route::post('/cadastro', 'UserController@store');
+Route::post('/animais', 'AnimalController@store');
 

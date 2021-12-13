@@ -1936,6 +1936,89 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      nome_animal: null,
+      sexo_animal: null,
+      cor_do_animal: null,
+      porte_animal: null,
+      imagem_animal: null
+    };
+  },
+  methods: {
+    envioImagemAnimal: function envioImagemAnimal(event) {
+      this.imagem_animal = event.target.files[0];
+    },
+    cadastroAnimais: function cadastroAnimais(e) {
+      var _this = this;
+
+      e.preventDefault();
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
+      var form = new FormData();
+      form.append('nome_animal', this.nome_animal);
+      form.append('sexo_animal', this.sexo_animal);
+      form.append('cor_do_animal', this.cor_do_animal);
+      form.append('porte_animal', this.porte_animal);
+      form.append('imagem_animal', this.imagem_animal);
+      axios.post('api/animais', form, config).then(function (response) {
+        if (response.status == 201) {
+          alert('Animal cadastrado com sucesso');
+          location.href = '/login';
+        }
+      })["catch"](function (error) {
+        _this.errors = [error.response.data];
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Endereco.vue?vue&type=script&lang=js& ***!
@@ -39089,6 +39172,182 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex justify-center" }, [
+    _c(
+      "form",
+      {
+        staticClass: "w-full",
+        attrs: {
+          enctype: "multipart/form-data",
+          action: "",
+          method: "post",
+          novalidate: "true"
+        },
+        on: { submit: _vm.cadastroAnimais }
+      },
+      [
+        _c("div", [
+          _c("label", [_vm._v("Nome")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.nome_animal,
+                expression: "nome_animal"
+              }
+            ],
+            staticClass: "w-full mb-2",
+            attrs: { type: "text", id: "endereco" },
+            domProps: { value: _vm.nome_animal },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.nome_animal = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", [_vm._v("Sexo")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.sexo_animal,
+                expression: "sexo_animal"
+              }
+            ],
+            staticClass: "w-full mb-2",
+            attrs: { type: "tex", id: "sexo_animal" },
+            domProps: { value: _vm.sexo_animal },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.sexo_animal = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", [_vm._v("Cor")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.cor_do_animal,
+                expression: "cor_do_animal"
+              }
+            ],
+            staticClass: "w-full mb-2",
+            attrs: { type: "text", id: "cor_do_animal" },
+            domProps: { value: _vm.cor_do_animal },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.cor_do_animal = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", [_vm._v("Porte")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.porte_animal,
+                expression: "porte_animal"
+              }
+            ],
+            staticClass: "w-full mb-2",
+            attrs: { type: "text", id: "porte_animal" },
+            domProps: { value: _vm.porte_animal },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.porte_animal = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", [_vm._v("Imagem")]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "w-full mb-2",
+            attrs: { type: "file", name: "filename" },
+            on: {
+              change: function($event) {
+                return _vm.envioImagemAnimal($event)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Enviar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98&":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98& ***!
@@ -39123,7 +39382,7 @@ var render = function() {
         _c(
           "div",
           { staticClass: "sm:w-1/2 quadrado bg-gray-300 rounded-2xl p-4 h-72" },
-          [_c("formulario-cadastro")],
+          [_c("cadastro-animais")],
           1
         )
       ]
@@ -39847,7 +40106,7 @@ var staticRenderFns = [
             {
               staticClass:
                 "rounded-3xl bg-yellow-600 uppercase py-2 px-8 text-white text-center mt-4",
-              attrs: { href: "/cadastro" }
+              attrs: { href: "/cadastro-animais" }
             },
             [_vm._v("acesse")]
           )
@@ -54650,7 +54909,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('login', __webpack_require__(/*! ./components/Login.vue */ "./resources/js/components/Login.vue")["default"]);
 Vue.component('cadastro', __webpack_require__(/*! ./components/Cadastro.vue */ "./resources/js/components/Cadastro.vue")["default"]);
+Vue.component('cadastro-animais', __webpack_require__(/*! ./components/CadastroAnimais.vue */ "./resources/js/components/CadastroAnimais.vue")["default"]);
 Vue.component('formulario-cadastro', __webpack_require__(/*! ./components/FormularioCadastro.vue */ "./resources/js/components/FormularioCadastro.vue")["default"]);
+Vue.component('cadastro-animais', __webpack_require__(/*! ./components/CadastroAnimais.vue */ "./resources/js/components/CadastroAnimais.vue")["default"]);
 Vue.component('formulario-endereco', __webpack_require__(/*! ./components/FormularioEndereco.vue */ "./resources/js/components/FormularioEndereco.vue")["default"]);
 Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
@@ -54796,6 +55057,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cadastro_vue_vue_type_template_id_f722a5b8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cadastro_vue_vue_type_template_id_f722a5b8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CadastroAnimais.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/CadastroAnimais.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CadastroAnimais.vue?vue&type=template&id=f3b501f4& */ "./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4&");
+/* harmony import */ var _CadastroAnimais_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CadastroAnimais.vue?vue&type=script&lang=js& */ "./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CadastroAnimais_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CadastroAnimais.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CadastroAnimais_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CadastroAnimais.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CadastroAnimais.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CadastroAnimais_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CadastroAnimais.vue?vue&type=template&id=f3b501f4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CadastroAnimais.vue?vue&type=template&id=f3b501f4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CadastroAnimais_vue_vue_type_template_id_f3b501f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
